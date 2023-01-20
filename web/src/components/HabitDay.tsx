@@ -1,5 +1,8 @@
 import * as Popover from '@radix-ui/react-popover'
+import * as Checkbox from '@radix-ui/react-checkbox'
 import clsx from 'clsx'
+
+import { Check } from 'phosphor-react'
 
 import { ProgressBar } from './ProgressBar'
 
@@ -16,11 +19,11 @@ export function HabitDay({ completed, amount }: HabitDayProps) {
             <Popover.Trigger
                 className={clsx('w-10 h-10border-2 rounded-lg cursor-pointer', {
                     'bg-zinc-900 border-zinc-800': comlpetedPercentage === 0,
-                    'bg-violet-900 border-violet-500': comlpetedPercentage > 0 && comlpetedPercentage < 20,
-                    'bg-violet-800 border-violet-500': comlpetedPercentage >= 20 && comlpetedPercentage < 40,
-                    'bg-violet-700 border-violet-500': comlpetedPercentage >= 40 && comlpetedPercentage < 60,
-                    'bg-violet-600 border-violet-500': comlpetedPercentage >= 60 && comlpetedPercentage < 80,
-                    'bg-violet-500 border-violet-400': comlpetedPercentage >= 80,
+                    'bg-green-900 border-green-500': comlpetedPercentage > 0 && comlpetedPercentage < 20,
+                    'bg-green-800 border-green-500': comlpetedPercentage >= 20 && comlpetedPercentage < 40,
+                    'bg-green-700 border-green-500': comlpetedPercentage >= 40 && comlpetedPercentage < 60,
+                    'bg-green-600 border-green-500': comlpetedPercentage >= 60 && comlpetedPercentage < 80,
+                    'bg-green-500 border-green-400': comlpetedPercentage >= 80,
                 })}
             />
 
@@ -34,6 +37,20 @@ export function HabitDay({ completed, amount }: HabitDayProps) {
                     </span>
 
                     <ProgressBar progress={comlpetedPercentage} />
+
+                    <div className="mt-6 flex flex-col gap-3">
+                        <Checkbox.Root className="flex items-center gap-3 group">
+                            <div className="h-8 w-8 rounded-lg flex items-center justify-center bg-zinc-900 border-2 border-zinc-800 group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500">
+                                <Checkbox.Indicator>
+                                    <Check size={20} className="text-white" />
+                                </Checkbox.Indicator>
+                            </div>
+
+                            <span className="font-semibold text-xl text-white leading-tight group-data-[state=checked]:line-through group-data-[state=checked]:text-zinc-400">
+                                Ler 2 capítulos
+                            </span>
+                        </Checkbox.Root>
+                    </div>
 
                     <Popover.Arrow height={8} width={16} className="fill-zinc-900" />
                 </Popover.Content>
