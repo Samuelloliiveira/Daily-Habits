@@ -27,7 +27,7 @@ export function HabitDay({ date, defaultCompleted = 0, amount = 0 }: HabitDayPro
     return (
         <Popover.Root>
             <Popover.Trigger
-                className={clsx('w-10 h-10border-2 rounded-lg cursor-pointer', {
+                className={clsx('w-10 h-10border-2 rounded-lg cursor-pointer transition-colors focus:outline-none focus:ring-2 focus:ring-green-500', {
                     'bg-zinc-900 border-zinc-800': comlpetedPercentage === 0,
                     'bg-green-900 border-green-500': comlpetedPercentage > 0 && comlpetedPercentage < 20,
                     'bg-green-800 border-green-500': comlpetedPercentage >= 20 && comlpetedPercentage < 40,
@@ -38,7 +38,7 @@ export function HabitDay({ date, defaultCompleted = 0, amount = 0 }: HabitDayPro
             />
 
             <Popover.Portal>
-                <Popover.Content className="min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col">
+                <Popover.Content className="min-w-[320px] p-6 rounded-2xl bg-zinc-900 flex flex-col focus:outline-none focus:ring-2 focus:ring-green-500">
                     <span className="font-semibold text-zinc-400">
                         {dayOfWeek}
                     </span>
