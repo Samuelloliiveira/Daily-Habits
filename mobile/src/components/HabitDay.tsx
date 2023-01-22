@@ -28,10 +28,10 @@ export function HabitDay({ amountOfHabits = 0, amountCompleted = 0, date, ...res
         "rounded-lg border-2 m-1", {
         ["bg-zinc-900 border-zinc-800"]: amountAccomplishedPercentage === 0,
         ["bg-green-900 border-green-700"]: amountAccomplishedPercentage > 0 && amountAccomplishedPercentage < 20,
-        ["bg-green-800 border-green-600"]: amountAccomplishedPercentage > 20 && amountAccomplishedPercentage < 40,
-        ["bg-green-700 border-green-500"]: amountAccomplishedPercentage > 40 && amountAccomplishedPercentage < 60,
-        ["bg-green-600 border-green-500"]: amountAccomplishedPercentage > 60 && amountAccomplishedPercentage < 80,
-        ["bg-green-500 border-green-400"]: amountAccomplishedPercentage > 80,
+        ["bg-green-800 border-green-600"]: amountAccomplishedPercentage >= 20 && amountAccomplishedPercentage < 40,
+        ["bg-green-700 border-green-500"]: amountAccomplishedPercentage >= 40 && amountAccomplishedPercentage < 60,
+        ["bg-green-600 border-green-500"]: amountAccomplishedPercentage >= 60 && amountAccomplishedPercentage < 80,
+        ["bg-green-500 border-green-400"]: amountAccomplishedPercentage >= 80,
         ["border-white"]: isCurrentDay,
       })}
       style={{ width: DAY_SIZE, height: DAY_SIZE }}
