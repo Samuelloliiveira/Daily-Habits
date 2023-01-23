@@ -1,0 +1,2 @@
+- Login com conta Google
+- Notificações locais para lembrar o usuário de seus hábitos
